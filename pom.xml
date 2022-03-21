@@ -65,7 +65,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>quake.alko.bot.MyApp</mainClass>
+                            <mainClass>quake.alko.bot.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -112,7 +112,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>quake.alko.bot.MyApp</mainClass>
+                            <mainClass>quake.alko.bot.Runner</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

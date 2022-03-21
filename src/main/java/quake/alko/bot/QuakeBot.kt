@@ -67,7 +67,7 @@ data class Score(
     var game: Game? = null
 }
 
-class QuakeBot(val bot: TelegramBot) {
+class QuakeBot(val bot: TelegramBot, config: Config) {
 
     val databaseUrl = "jdbc:sqlite:/home/roman/quake.db"
 
