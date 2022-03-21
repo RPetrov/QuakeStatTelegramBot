@@ -67,7 +67,7 @@ data class Score(
     var game: Game? = null
 }
 
-class QuakeBot(val bot: TelegramBot, config: Config) {
+class QuakeBot(val bot: TelegramBot, val config: Config) {
 
     val databaseUrl = "jdbc:sqlite:/home/roman/quake.db"
 
@@ -103,12 +103,8 @@ class QuakeBot(val bot: TelegramBot, config: Config) {
         val updates = updates.filterNotNull()
 
         for (update in updates) {
-            val photo = update.message()?.photo()
-            if (photo != null) {
-                // bot.execute(SendMessage(update.message().chat().id(), "Фото больше присылать не надо"))
-            }
 
-            if(update.message().chat().type() != Chat.Type.supergroup || update.message().chat().title() != "АлкоUnreal"){
+            if(update.message().chat().id() !in config.allowedChatIds){
                 bot.execute(SendMessage(update.message().chat().id(), "Нет доступа!"))
                 return
             }
